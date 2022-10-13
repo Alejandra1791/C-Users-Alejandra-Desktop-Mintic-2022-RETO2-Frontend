@@ -1,0 +1,48 @@
+SELECT * FROM CLIENT
+
+BEGIN
+    INSERT INTO CLIENT (ID,NAME,EMAIL,AGE)
+    VALUES(1,”Juan”, “juan@correo.co”, 33);
+    :status_code := 201;
+    END;
+
+SELECT * FROM CLIENT
+
+BEGIN
+    UPDATE CLIENT
+    SET
+    EMAIL = “alberto@correo.co”,
+    AGE = 62,
+    NAME = “Alberto”
+    WHERE ID = 1;
+    :status_code := 201;
+END;
+
+
+
+SELECT * FROM CLIENT
+
+BEGIN
+    DELETE FROM CLIENT
+    WHERE ID = 1,
+    :status_code := 204;
+END;
+
+SELECT * FROM CLIENT
+
+BEGIN
+    INSERT INTO MESSAGE(ID, MESSAGETEXT)
+    VALUES(1, “Este es un mensaje”);
+    :status_code := 201;
+END;
+
+SELECT * FROM MESSAGE
+
+BEGIN
+    DELETE FROM MESSAGE
+    WHERE ID = 1,
+    :status_code := 204;
+END;
+
+SELECT * FROM MESSAGE
+
